@@ -20,9 +20,11 @@ for a_tag in soup.findAll("a"):
         numberOfLinks += 1
 
 
+a = len(set(req.text.split()))
+print ('Number of all elements of web page : ', a)
 img = len(soup.find_all('img'))
 
-print("Number of tags: ", numOfTags)
-print('Number of word ' + word + ':', words)
+print("Number of tags: ", numOfTags, '; Frequency of occurrence: ', numOfTags/a)
+print('Number of word ' + word + ':', words, '; Frequency of occurrence: ', words/a)
 print('Number of links: ', numberOfLinks)
 print('Number of images: ', img)
