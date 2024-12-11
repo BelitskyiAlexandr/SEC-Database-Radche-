@@ -1,7 +1,6 @@
 import csv
 
 def load_books(file_path):
-    """Завантаження даних з CSV-файлу."""
     books = []
     with open(file_path, mode='r', encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file)

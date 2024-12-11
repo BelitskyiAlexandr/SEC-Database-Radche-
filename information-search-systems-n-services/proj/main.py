@@ -4,7 +4,7 @@ from modules.data_loader import load_books
 from modules.genre_vector import create_genre_vector, update_genre_vector
 from modules.relevance_search import search_books
 
-init(autoreset=True)  # Автоматичне скидання кольорів
+init(autoreset=True)  
 
 def display_menu():
     """Display the main menu."""
@@ -54,7 +54,6 @@ def filter_books_by_genres(books, genre_vector):
         if any(genre in user_genres for genre in book_genres):
             filtered_books.append(book)
 
-    # Sort books by the number of matching genres
     filtered_books.sort(
         key=lambda book: sum(genre_vector.get(genre, 0) for genre in book['genres']),
         reverse=True
